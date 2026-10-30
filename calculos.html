@@ -1,238 +1,263 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Bootstrap - Aula</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-              crossorigin="anonymous">
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Experimente uma calculadora salarial e um cálculo simples de desconto e multa." />
+    <meta name="theme-color" content="#17233c" />
+    <title>Calculadoras | Salários em Foco</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="css/estilo.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"
+          ><span class="brand-mark"><i class="bi bi-calculator" aria-hidden="true"></i></span
+          ><span>Salários em Foco</span></a
+        ><button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="calculos.html">Calculadoras</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="validacaoForm.html">Formulários</a></li>
+            <li class="nav-item"><a class="nav-link" href="jquery.html">Interações</a></li>
+          </ul>
+          <a class="btn btn-sm btn-nav-cta ms-lg-3 mt-2 mt-lg-0" href="validacaoForm.html">Testar formulário</a>
+        </div>
+      </div>
+    </nav>
 
-        <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css" />
+    <main id="conteudo" class="container page-content">
+      <nav aria-label="Navegação estrutural">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Calculadoras</li>
+        </ol>
+      </nav>
+      <header class="page-heading">
+        <span class="section-kicker">Faça um teste</span>
+        <h1>Calculadoras de exemplo</h1>
+        <p>Preencha os campos e veja como os valores são organizados. As fórmulas salariais são didáticas e fixas.</p>
+      </header>
+      <div class="alert alert-warning d-flex gap-2 align-items-start" role="note">
+        <i class="bi bi-exclamation-triangle-fill mt-1" aria-hidden="true"></i>
+        <p class="mb-0">
+          <strong>Importante:</strong> este modelo não calcula uma folha oficial. Os percentuais e bônus são exemplos de
+          programação, não regras trabalhistas ou tributárias.
+        </p>
+      </div>
 
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <!-- sticky-top -> fixo no topo com espaço com conteúdo abaixo)-->
-            <a class="navbar-brand" href="index.html">Dengue</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html"
-                           title="Página inicial"><i class="bi bi-house"></i>
-                            Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="jquery.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i> JQuery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calculos.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i>
-                            Calculos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="validacaoForm.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i> Validação
-                            JQuery</a>
-                    </li>
-                </ul>
+      <section class="row g-4 align-items-start mt-2" aria-label="Calculadoras">
+        <div class="col-lg-7">
+          <article class="tool-card h-100">
+            <div class="tool-card-header">
+              <div class="tool-icon"><i class="bi bi-person-vcard" aria-hidden="true"></i></div>
+              <div>
+                <span class="section-kicker">Simulação didática</span>
+                <h2 class="h3 mb-0">Calculadora salarial</h2>
+              </div>
             </div>
-
-            <ul class="float-right">
-                <li style="list-style:none;" class="mt-2">
-                    <a style="text-decoration: none; color: white;"
-                       href="#">Imagem aqui</a>
-                </li>
-            </ul>
-        </nav>
-
-        <div class="container mt-3">
-            <hr>
-<h4>Cálculo de Salário com jQuery</h4>
-<form id="salaryForm">
-    <div class="form-group">
-        <label for="nome">Nome</label>
-        <input type="text" id="nome" class="form-control" required>
-    </div>
-    <div class="form-group">
-        <label for="idade">Idade</label>
-        <input type="number" id="idade" class="form-control" required>
-    </div>
-    <div class="form-group">
-        <label for="salario">Salário Bruto</label>
-        <input type="number" id="salario" class="form-control" step="0.5" required>
-    </div>
-    <div class="form-group">
-        <label for="dependentes">Número de Dependentes</label>
-        <input type="number" id="dependentes" class="form-control" required>
-    </div>
-    <button type="submit" class="btn btn-success mt-2">Calcular Salário</button>
-</form>
-
-            <div class="row mb-3">
-                <div class="col-md-12 col-sm-12 mb-2">
-
-                    <div class="form-group">
-                        <label for="txtvalor">Valor</label>
-                        <input type="number" step="0.5" class="form-control"
-                               id="txtvalor"
-                               name="txtvalor" value>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtdesconto">Desconto</label>
-                        <input type="number" step="0.5" class="form-control"
-                               id="txtdesconto"
-                               name="txtdesconto" value>
-                    </div>
-                    <div class="form-group">
-                        <label for="txtmulta">Multa</label>
-                        <input type="number" step="0.5" class="form-control"
-                               id="txtmulta"
-                               name="txtmulta" value>
-                    </div>
-
-                    <button id="calcular"
-                            class="btn btn-danger">Calcular</button>
-
+            <p class="text-secondary">Informe alguns dados para visualizar um exemplo de composição do salário.</p>
+            <form id="salaryForm" class="row g-3 needs-validation" novalidate>
+              <div class="col-12">
+                <label for="nome" class="form-label">Nome</label
+                ><input
+                  type="text"
+                  id="nome"
+                  class="form-control"
+                  autocomplete="name"
+                  minlength="2"
+                  maxlength="80"
+                  required
+                />
+                <div class="invalid-feedback">Digite um nome com pelo menos 2 caracteres.</div>
+              </div>
+              <div class="col-md-4">
+                <label for="idade" class="form-label">Idade</label>
+                <div class="input-group has-validation">
+                  <input type="number" id="idade" class="form-control" min="18" max="100" step="1" required /><span
+                    class="input-group-text"
+                    >anos</span
+                  >
+                  <div class="invalid-feedback">Use uma idade entre 18 e 100 anos.</div>
                 </div>
-                <div class="col-md-12 col-sm-12 mb-2">
-                    <div class="alert alert-primary" role="alert">
-                        <p id="txtresultado">Resultado: </p>
-                    </div>
+              </div>
+              <div class="col-md-8">
+                <label for="salario" class="form-label">Salário bruto</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">R$</span
+                  ><input
+                    type="number"
+                    id="salario"
+                    class="form-control"
+                    min="0.01"
+                    step="0.01"
+                    inputmode="decimal"
+                    placeholder="0,00"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe um valor maior que zero.</div>
                 </div>
-                <div class="col-md-12 col-sm-12 mb-2">
-                    <div class="alert alert-warning" role="alert">
-                        <p id="txtmsg">Mensagem: </p>
-                    </div>
+              </div>
+              <div class="col-md-6">
+                <label for="dependentes" class="form-label">Dependentes</label
+                ><input
+                  type="number"
+                  id="dependentes"
+                  class="form-control"
+                  min="0"
+                  max="20"
+                  step="1"
+                  value="0"
+                  required
+                />
+                <div class="form-text">Para este exemplo, cada dependente soma R$ 50.</div>
+                <div class="invalid-feedback">Informe de 0 a 20 dependentes.</div>
+              </div>
+              <div class="col-12">
+                <button type="submit" class="btn btn-primary">
+                  <i class="bi bi-calculator me-2" aria-hidden="true"></i>Calcular exemplo</button
+                ><button id="limpar-salario" type="reset" class="btn btn-outline-secondary ms-2">Limpar campos</button>
+              </div>
+            </form>
+            <section
+              id="salary-summary"
+              class="result-panel d-none mt-4"
+              aria-labelledby="salary-result-heading"
+              aria-live="polite"
+            >
+              <div class="result-top">
+                <div>
+                  <span class="section-kicker">Resultado estimado</span>
+                  <h3 id="salary-result-heading" class="h5 mb-0">Simulação de <span id="salary-person-name"></span></h3>
                 </div>
-                <div class="col-md-12 col-sm-12 mb-2">
-                    <div class="alert alert-success" role="alert">
-                        <p id="txtfatorial">N! </p>
-                    </div>
-                </div>
-            </div>
+                <span class="badge text-bg-success-subtle text-success-emphasis">Exemplo didático</span>
+              </div>
+              <div class="net-result">
+                <span>Salário líquido demonstrativo</span><strong id="salary-result-value">R$ 0,00</strong>
+              </div>
+              <div class="table-responsive">
+                <table class="table table-sm breakdown-table mb-0">
+                  <caption class="visually-hidden">
+                    Detalhamento do cálculo salarial
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th scope="col">Componente</th>
+                      <th scope="col" class="text-end">Valor</th>
+                    </tr>
+                  </thead>
+                  <tbody id="salary-breakdown"></tbody>
+                </table>
+              </div>
+              <p id="salary-model-note" class="small text-secondary mt-3 mb-0"></p>
+            </section>
+          </article>
         </div>
 
-        <!-- Footer 
-        peguei esse https://bootsnipp.com/snippets/rlXdE
-        tem mais em https://bootsnipp.com/tags/footer/4
-        -->
-        <section id="footer">
-            <div class="container">
-                <div
-                    class="row text-center text-xs-center text-sm-left text-md-left">
-                    <div class="col-xs-12 col-sm-4 col-md-4">
-                        <h5>Quick links</h5>
-                        <ul class="list-unstyled quick-links">
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Home</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>About</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>FAQ</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Get
-                                    Started</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Videos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4">
-                        <h5>Quick links</h5>
-                        <ul class="list-unstyled quick-links">
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Home</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>About</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>FAQ</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Get
-                                    Started</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Videos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-xs-12 col-sm-4 col-md-4">
-                        <div class="card">
-                            <div class="card-body">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.304234737327!2d-47.20515972545756!3d-23.085956244297464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b4b183d3173b%3A0xe4e10e5dd84bd49e!2sFatec!5e0!3m2!1spt-BR!2sbr!4v1716983275274!5m2!1spt-BR!2sbr"
-                                    width="100%" height="315" style="border:0;"
-                                    allowfullscreen loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-                        <ul
-                            class="list-unstyled list-inline social text-center">
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-google-plus"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"
-                                    target="_blank"><i
-                                        class="fa fa-envelope"></i></a></li>
-                        </ul>
-                    </div>
-                    <hr>
-                </div>
-                <div class="row">
-                    <div
-                        class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                        <p><u><a
-                                    href="https://www.nationaltransaction.com/">National
-                                    Transaction Corporation</a></u> is a
-                            Registered MSP/ISO of Elavon, Inc. Georgia [a wholly
-                            owned subsidiary of U.S. Bancorp, Minneapolis,
-                            MN]</p>
-                        <p class="h6">© All right Reversed.<a
-                                class="text-green ml-2"
-                                href="https://www.sunlimetech.com"
-                                target="_blank">Sunlimetech</a></p>
-                    </div>
-                    <hr>
-                </div>
+        <div class="col-lg-5">
+          <article class="tool-card mb-4">
+            <div class="tool-card-header">
+              <div class="tool-icon tool-icon-blue"><i class="bi bi-receipt" aria-hidden="true"></i></div>
+              <div>
+                <span class="section-kicker">Outra conta</span>
+                <h2 class="h4 mb-0">Valor, desconto e multa</h2>
+              </div>
             </div>
-        </section>
-        <!-- ./Footer -->
+            <p class="text-secondary">Uma conta simples para praticar leitura de campos e atualização do resultado.</p>
+            <form id="simpleCalcForm" class="row g-3" novalidate>
+              <div class="col-12">
+                <label for="txtvalor" class="form-label">Valor inicial</label>
+                <div class="input-group has-validation">
+                  <span class="input-group-text">R$</span
+                  ><input
+                    type="number"
+                    id="txtvalor"
+                    class="form-control"
+                    min="0.01"
+                    step="0.01"
+                    placeholder="0,00"
+                    required
+                  />
+                  <div class="invalid-feedback">Informe um valor inicial maior que zero.</div>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="txtdesconto" class="form-label">Desconto</label>
+                <div class="input-group">
+                  <span class="input-group-text">R$</span
+                  ><input type="number" id="txtdesconto" class="form-control" min="0" step="0.01" value="0" />
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label for="txtmulta" class="form-label">Multa</label>
+                <div class="input-group">
+                  <span class="input-group-text">R$</span
+                  ><input type="number" id="txtmulta" class="form-control" min="0" step="0.01" value="0" />
+                </div>
+              </div>
+              <div class="col-12">
+                <button id="calcular" type="submit" class="btn btn-outline-primary">
+                  <i class="bi bi-plus-slash-minus me-2" aria-hidden="true"></i>Calcular total
+                </button>
+              </div>
+            </form>
+            <div id="simple-result" class="alert alert-primary d-none mt-3 mb-0" role="status" aria-live="polite">
+              <strong id="txtresultado"></strong><br /><span id="txtmsg"></span>
+            </div>
+          </article>
 
-        <script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-
-        <script src="js/calculos.js"></script>
-    </body>
+          <div class="accordion learning-accordion" id="accordionFormula">
+            <div class="accordion-item">
+              <h2 class="accordion-header">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#formulaContent"
+                  aria-expanded="false"
+                  aria-controls="formulaContent"
+                >
+                  Como funciona a fórmula demonstrativa?
+                </button>
+              </h2>
+              <div id="formulaContent" class="accordion-collapse collapse" data-bs-parent="#accordionFormula">
+                <div class="accordion-body">
+                  <ul class="mb-0">
+                    <li>Desconto ilustrativo de 8% sobre o salário bruto.</li>
+                    <li>Desconto ilustrativo de 5% para transporte.</li>
+                    <li>Bônus fixo de R$ 200 ou R$ 300, conforme a idade informada.</li>
+                    <li>Adição demonstrativa de R$ 50 por dependente.</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="site-footer">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <p class="mb-0"><strong>Salários em Foco</strong> · Projeto didático</p>
+        <p class="mb-0">Os valores são ilustrativos <span aria-hidden="true">·</span> <span id="ano-atual"></span></p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/calculos.js"></script>
+  </body>
 </html>

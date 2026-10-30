@@ -1,257 +1,172 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-    <head>
-        <title>Bootstrap - Aula</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-              crossorigin="anonymous">
-
-        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css" />
-
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <!-- sticky-top -> fixo no topo com espaço com conteúdo abaixo)-->
-            <a class="navbar-brand" href="index.html">Dengue</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html"
-                           title="Página inicial"><i class="bi bi-house"></i>
-                            Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="jquery.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i> JQuery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calculos.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i>
-                            Calculos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="validacaoForm.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i> Validação
-                            JQuery</a>
-                    </li>
-                </ul>
-            </div>
-
-            <ul class="float-right">
-                <li style="list-style:none;" class="mt-2">
-                    <a style="text-decoration: none; color: white;"
-                       href="#">Imagem aqui</a>
-                </li>
-            </ul>
-        </nav>
-
-        <div id="resultado"></div>
-
-        <div class="container mt-3">
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Home</a></li>
-                    <li class="breadcrumb-item active"
-                        aria-current="page">InfoDengue</li>
-                </ol>
-            </nav>
-
-            <div class="row">
-                <div class="col-md-4 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Título do card</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Subtitulo
-                                do card</h6>
-                            <p class="card-text">Um exemplo de texto rápido para
-                                construir o título do card e fazer preencher o
-                                conteúdo do card.</p>
-                            <a href="#" class="card-link">Link do card</a>
-                            <a href="#" class="card-link">Outro link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Título do card</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Subtitulo
-                                do card</h6>
-                            <p class="card-text">Um exemplo de texto rápido para
-                                construir o título do card e fazer preencher o
-                                conteúdo do card.</p>
-                            <a href="#" class="card-link">Link do card</a>
-                            <a href="#" class="card-link">Outro link</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-2">
-                    <div class="card">
-                        <div class="card-body">
-                            <h5 class="card-title">Título do card</h5>
-                            <h6 class="card-subtitle mb-2 text-muted">Subtitulo
-                                do card</h6>
-                            <p class="card-text">Um exemplo de texto rápido para
-                                construir o título do card e fazer preencher o
-                                conteúdo do card.</p>
-                            <a href="#" class="card-link">Link do card</a>
-                            <a href="#" class="card-link">Outro link</a>
-                        </div>
-                    </div>
-
-                </div>
-
-            </div><!--fim row-->
-
-            <div class="row">
-                <div class="col-md-8 col-sm-12 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <iframe width="100%" height="315"
-                                    src="https://www.youtube.com/embed/S45kHeWnT0M?si=tEM86J_IokliNMW8"
-                                    title="YouTube video player" frameborder="0"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    referrerpolicy="strict-origin-when-cross-origin"
-                                    allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4 col-sm-12 mb-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <iframe
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.304234737327!2d-47.20515972545756!3d-23.085956244297464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b4b183d3173b%3A0xe4e10e5dd84bd49e!2sFatec!5e0!3m2!1spt-BR!2sbr!4v1716983275274!5m2!1spt-BR!2sbr"
-                                width="100%" height="315" style="border:0;"
-                                allowfullscreen loading="lazy"
-                                referrerpolicy="no-referrer-when-downgrade"></iframe>
-                        </div>
-                    </div>
-                </div>
-            </div>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Projeto didático para explorar cálculos salariais, Bootstrap, JavaScript e validação de formulários."
+    />
+    <meta name="theme-color" content="#17233c" />
+    <title>Salários em Foco | Projeto didático</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="css/estilo.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"
+          ><span class="brand-mark"><i class="bi bi-calculator" aria-hidden="true"></i></span
+          ><span>Salários em Foco</span></a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link active" aria-current="page" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="calculos.html">Calculadoras</a></li>
+            <li class="nav-item"><a class="nav-link" href="validacaoForm.html">Formulários</a></li>
+            <li class="nav-item"><a class="nav-link" href="jquery.html">Interações</a></li>
+          </ul>
+          <a class="btn btn-sm btn-nav-cta ms-lg-3 mt-2 mt-lg-0" href="calculos.html"
+            ><i class="bi bi-arrow-right-circle me-1" aria-hidden="true"></i>Começar</a
+          >
         </div>
+      </div>
+    </nav>
 
-        <!-- Footer 
-        peguei esse https://bootsnipp.com/snippets/rlXdE
-        tem mais em https://bootsnipp.com/tags/footer/4
-        -->
-        <section id="footer">
-            <div class="container">
-                <div
-                    class="row text-center text-xs-center text-sm-left text-md-left">
-                    <div class="col-xs-12 col-sm-4 col-md-4">
-                        <h5>Quick links</h5>
-                        <ul class="list-unstyled quick-links">
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Home</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>About</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>FAQ</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Get
-                                    Started</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Videos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-12 col-md-4">
-                        <h5>Quick links</h5>
-                        <ul class="list-unstyled quick-links">
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Home</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>About</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>FAQ</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Get
-                                    Started</a></li>
-                            <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-angle-double-right"></i>Videos</a></li>
-                        </ul>
-                    </div>
-                    <div class="col-sm-12 col-md-4  mt-sm-5">
-                        <div class="card">
-                            <div class="card-body">
-                                <iframe
-                                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.304234737327!2d-47.20515972545756!3d-23.085956244297464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b4b183d3173b%3A0xe4e10e5dd84bd49e!2sFatec!5e0!3m2!1spt-BR!2sbr!4v1716983275274!5m2!1spt-BR!2sbr"
-                                    width="100%" height="315" style="border:0;"
-                                    allowfullscreen loading="lazy"
-                                    referrerpolicy="no-referrer-when-downgrade"></iframe>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-sm-12 col-md-12 mt-2 mt-sm-5">
-                        <ul
-                            class="list-unstyled list-inline social text-center">
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-facebook"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-twitter"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-instagram"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"><i
-                                        class="fa fa-google-plus"></i></a></li>
-                            <li class="list-inline-item"><a
-                                    href="https://www.fiverr.com/share/qb8D02"
-                                    target="_blank"><i
-                                        class="fa fa-envelope"></i></a></li>
-                        </ul>
-                    </div>
-                    <hr>
-                </div>
-                <div class="row">
-                    <div
-                        class="col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                        <p><u><a
-                                    href="https://www.nationaltransaction.com/">National
-                                    Transaction Corporation</a></u> is a
-                            Registered MSP/ISO of Elavon, Inc. Georgia [a wholly
-                            owned subsidiary of U.S. Bancorp, Minneapolis,
-                            MN]</p>
-                        <p class="h6">© All right Reversed.<a
-                                class="text-green ml-2"
-                                href="https://www.sunlimetech.com"
-                                target="_blank">Sunlimetech</a></p>
-                    </div>
-                    <hr>
-                </div>
+    <main id="conteudo">
+      <header class="hero-section">
+        <div class="container">
+          <div class="row align-items-center g-5">
+            <div class="col-lg-7">
+              <span class="hero-kicker"><i class="bi bi-mortarboard me-2" aria-hidden="true"></i>Projeto didático</span>
+              <h1 class="hero-title">Salário explicado, <span>passo a passo.</span></h1>
+              <p class="hero-copy">
+                Explore cálculos de exemplo, veja cada parte do resultado e pratique Bootstrap, JavaScript e validação
+                de formulários.
+              </p>
+              <div class="d-flex flex-column flex-sm-row gap-3 mt-4">
+                <a href="calculos.html" class="btn btn-primary btn-lg"
+                  ><i class="bi bi-calculator me-2" aria-hidden="true"></i>Abrir calculadoras</a
+                >
+                <a href="validacaoForm.html" class="btn btn-outline-primary btn-lg"
+                  >Testar um formulário<i class="bi bi-arrow-up-right ms-2" aria-hidden="true"></i
+                ></a>
+              </div>
             </div>
-        </section>
-        <!-- ./Footer -->
+            <div class="col-lg-5">
+              <div class="hero-visual">
+                <div class="hero-orbit orbit-a"></div>
+                <div class="hero-orbit orbit-b"></div>
+                <div class="hero-art-card">
+                  <img
+                    src="img/chapeu-de-graduacao.png"
+                    alt="Ilustração de um capelo de formatura"
+                    width="512"
+                    height="512"
+                  />
+                  <div>
+                    <span class="badge rounded-pill text-bg-success-subtle text-success-emphasis"
+                      >Aprender na prática</span
+                    >
+                    <h2 class="h4 mt-3 mb-1">Do formulário ao resultado</h2>
+                    <p class="mb-0 text-secondary">Conheça as ferramentas e entenda como o cálculo é montado.</p>
+                  </div>
+                </div>
+                <div class="floating-note">
+                  <i class="bi bi-check2-circle" aria-hidden="true"></i><span>Simples de explorar</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
 
+      <section class="section-space" aria-labelledby="recursos-titulo">
+        <div class="container">
+          <div class="section-heading">
+            <span class="section-kicker">Explore o projeto</span>
+            <h2 id="recursos-titulo">Aprender fazendo fica mais claro.</h2>
+            <p>Três áreas para experimentar diferentes partes do desenvolvimento web.</p>
+          </div>
+          <div class="row g-4 mt-2">
+            <div class="col-md-4">
+              <article class="feature-card h-100">
+                <div class="feature-icon icon-green"><i class="bi bi-cash-stack" aria-hidden="true"></i></div>
+                <span class="feature-number">01</span>
+                <h3>Calculadoras</h3>
+                <p>Teste uma simulação salarial e uma conta simples de desconto e multa.</p>
+                <a href="calculos.html" class="feature-link"
+                  >Ver calculadoras<i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
+                ></a>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="feature-card h-100">
+                <div class="feature-icon icon-blue"><i class="bi bi-ui-checks" aria-hidden="true"></i></div>
+                <span class="feature-number">02</span>
+                <h3>Formulários</h3>
+                <p>Preencha campos com regras de validação e receba retorno na própria página.</p>
+                <a href="validacaoForm.html" class="feature-link"
+                  >Abrir demonstração<i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
+                ></a>
+              </article>
+            </div>
+            <div class="col-md-4">
+              <article class="feature-card h-100">
+                <div class="feature-icon icon-amber"><i class="bi bi-magic" aria-hidden="true"></i></div>
+                <span class="feature-number">03</span>
+                <h3>Interações jQuery</h3>
+                <p>Veja elementos aparecer, mudar de estilo e atualizar conteúdo com cliques.</p>
+                <a href="jquery.html" class="feature-link"
+                  >Explorar interações<i class="bi bi-arrow-right ms-2" aria-hidden="true"></i
+                ></a>
+              </article>
+            </div>
+          </div>
+        </div>
+      </section>
 
+      <section class="container pb-5">
+        <div class="disclaimer-panel">
+          <div class="disclaimer-icon"><i class="bi bi-lightbulb" aria-hidden="true"></i></div>
+          <div>
+            <h2 class="h5 mb-1">Uma simulação para aprender</h2>
+            <p class="mb-0">
+              As regras e valores da calculadora salarial são fixos e ilustrativos. INSS, benefícios, impostos e
+              descontos reais dependem de regras vigentes e da situação de cada pessoa.
+            </p>
+          </div>
+          <a href="calculos.html" class="btn btn-outline-dark ms-lg-auto"
+            >Entendi<i class="bi bi-arrow-up-right ms-2" aria-hidden="true"></i
+          ></a>
+        </div>
+      </section>
+    </main>
 
-
-        <script
-        src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-        <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
-            integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-        crossorigin="anonymous"></script>
-        <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
-            integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-        crossorigin="anonymous"></script>
-
-    </body>
+    <footer class="site-footer">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <p class="mb-0"><strong>Salários em Foco</strong> · Projeto didático</p>
+        <p class="mb-0">
+          Feito para aprender desenvolvimento web <span aria-hidden="true">·</span> <span id="ano-atual"></span>
+        </p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("ano-atual").textContent = new Date().getFullYear();
+    </script>
+  </body>
 </html>

@@ -1,40 +1,34 @@
-//Validação simples
-//$("#formExemplo").validate();
+(() => {
+  "use strict";
+  const form = document.querySelector("#formExemplo");
+  const result = document.querySelector("#validationResult");
+  const output = document.querySelector("#txtresultado");
 
-$("#formExemplo").validate({
-    debug: true,
-    rules: {
-        txtemail: {
-            required: true,
-            email: true,
-        },
-        txtnome: {
-            rangelength: [2, 100], //entre 2 e 100 caract
-            required: true,
-        },
-        txtidade: {
-            min: 18,
-            max: 100,
-            // ou
-            //range: [10, 15] //Realiza a mesma coisa dos anteriores
-            required: true,
-        }
-    },
-    messages: {
-        txtemail: {
-            required: "E-mail requerido",
-            email: "Formato inválido de email",
-        },
-        txtnome: {
-            required: "Nome requerido",
-            minlength: jQuery.validator.format("Exigido 2 caracteres no mínimo"),
-            maxlength: jQuery.validator.format("Permitido 100 caracteres no máximo"),
-        },
-        txtidade: {
-            required: "Idade requerida",
-            min : "Valor mínimo: 18",
-            max : "Valor máximo: 100",
-        }
+  form.addEventListener("submit", (event) => {
+    event.preventDefault();
+    form.classList.add("was-validated");
+    if (!form.checkValidity()) {
+      form.querySelector(":invalid")?.focus();
+      result.classList.add("d-none");
+      return;
     }
-});
 
+    const name = document.querySelector("#txtnome").value.trim();
+    const age = document.querySelector("#txtidade").value;
+    const email = document.querySelector("#txtemail").value.trim();
+    const objective = document.querySelector("#txtobjetivo").value;
+    output.textContent = `${name}, seu formulário foi validado. Objetivo: ${objective}. E-mail informado: ${email}. Idade: ${age}. Nenhum dado foi enviado a um servidor.`;
+    result.classList.remove("d-none");
+    result.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  });
+
+  form.addEventListener("reset", () => {
+    window.setTimeout(() => {
+      form.classList.remove("was-validated");
+      result.classList.add("d-none");
+    }, 0);
+  });
+
+  const year = document.querySelector("#ano-atual");
+  if (year) year.textContent = new Date().getFullYear();
+})();

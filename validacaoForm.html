@@ -1,228 +1,170 @@
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Bootstrap - Aula</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet"
-              href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-              integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-              crossorigin="anonymous">
-
-        <link rel="stylesheet"
-              href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-        <link href="css/estilo.css" rel="stylesheet" type="text/css" />
-
-    </head>
-    <body>
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top">
-            <!-- sticky-top -> fixo no topo com espaço com conteúdo abaixo)-->
-            <a class="navbar-brand" href="index.html">Dengue</a>
-            <button class="navbar-toggler" type="button" data-toggle="collapse"
-                    data-target="#navbarNav" aria-controls="navbarNav"
-                    aria-expanded="false" aria-label="Alterna navegação">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse " id="navbarNav">
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="index.html"
-                           title="Página inicial"><i class="bi bi-house"></i>
-                            Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="jquery.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i> JQuery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="calculos.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i>
-                            Calculos</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="validacaoForm.html"
-                           title="entre em contato"><i
-                                class="bi bi-input-cursor-text"></i> Validação
-                            JQuery</a>
-                    </li>
-                </ul>
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Pratique validação de formulários com Bootstrap e mensagens acessíveis." />
+    <meta name="theme-color" content="#17233c" />
+    <title>Formulários | Salários em Foco</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link href="css/estilo.css" rel="stylesheet" />
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+    <nav class="navbar navbar-expand-lg navbar-dark site-navbar sticky-top" aria-label="Navegação principal">
+      <div class="container">
+        <a class="navbar-brand d-flex align-items-center gap-2" href="index.html"
+          ><span class="brand-mark"><i class="bi bi-calculator" aria-hidden="true"></i></span
+          ><span>Salários em Foco</span></a
+        ><button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Abrir menu"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Início</a></li>
+            <li class="nav-item"><a class="nav-link" href="calculos.html">Calculadoras</a></li>
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="validacaoForm.html">Formulários</a>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="jquery.html">Interações</a></li>
+          </ul>
+          <a class="btn btn-sm btn-nav-cta ms-lg-3 mt-2 mt-lg-0" href="jquery.html">Ver interações</a>
+        </div>
+      </div>
+    </nav>
+    <main id="conteudo" class="container page-content">
+      <nav aria-label="Navegação estrutural">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Início</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Formulários</li>
+        </ol>
+      </nav>
+      <header class="page-heading">
+        <span class="section-kicker">Campos e regras</span>
+        <h1>Validação de formulário</h1>
+        <p>Preencha os campos para ver a validação do navegador com os estados visuais do Bootstrap.</p>
+      </header>
+      <div class="row g-4 align-items-start">
+        <div class="col-lg-7">
+          <section class="tool-card">
+            <div class="tool-card-header">
+              <div class="tool-icon tool-icon-blue"><i class="bi bi-ui-checks" aria-hidden="true"></i></div>
+              <div>
+                <span class="section-kicker">Demonstração local</span>
+                <h2 class="h3 mb-0">Seus dados de exemplo</h2>
+              </div>
             </div>
-
-            <ul class="float-right">
-                <li style="list-style:none;" class="mt-2">
-                    <a style="text-decoration: none; color: white;"
-                       href="#">Imagem aqui</a>
-                </li>
+            <form id="formExemplo" class="row g-3" novalidate>
+              <div class="col-md-6">
+                <label for="txtnome" class="form-label">Nome</label
+                ><input
+                  id="txtnome"
+                  name="txtnome"
+                  type="text"
+                  class="form-control"
+                  minlength="2"
+                  maxlength="100"
+                  autocomplete="name"
+                  required
+                  aria-describedby="nome-ajuda"
+                />
+                <div id="nome-ajuda" class="form-text">De 2 a 100 caracteres.</div>
+                <div class="invalid-feedback">Informe um nome com pelo menos 2 caracteres.</div>
+              </div>
+              <div class="col-md-6">
+                <label for="txtidade" class="form-label">Idade</label
+                ><input
+                  id="txtidade"
+                  name="txtidade"
+                  type="number"
+                  class="form-control"
+                  min="18"
+                  max="100"
+                  step="1"
+                  required
+                />
+                <div class="invalid-feedback">A idade deve estar entre 18 e 100 anos.</div>
+              </div>
+              <div class="col-12">
+                <label for="txtemail" class="form-label">E-mail</label
+                ><input
+                  id="txtemail"
+                  name="txtemail"
+                  type="email"
+                  class="form-control"
+                  autocomplete="email"
+                  placeholder="voce@exemplo.com"
+                  required
+                />
+                <div class="invalid-feedback">Digite um e-mail válido.</div>
+              </div>
+              <div class="col-12">
+                <label for="txtobjetivo" class="form-label">O que você quer aprender?</label
+                ><select id="txtobjetivo" name="txtobjetivo" class="form-select" required>
+                  <option value="" selected disabled>Selecione uma opção</option>
+                  <option>Construir páginas</option>
+                  <option>Fazer cálculos com JavaScript</option>
+                  <option>Validar formulários</option>
+                  <option>Usar Bootstrap</option>
+                </select>
+                <div class="invalid-feedback">Escolha uma opção.</div>
+              </div>
+              <div class="col-12">
+                <div class="form-check">
+                  <input id="consentimento" class="form-check-input" type="checkbox" required /><label
+                    class="form-check-label"
+                    for="consentimento"
+                    >Entendi que este formulário é uma demonstração e não envia meus dados.</label
+                  >
+                  <div class="invalid-feedback">Marque a caixa para continuar.</div>
+                </div>
+              </div>
+              <div class="col-12">
+                <button class="btn btn-primary" type="submit">
+                  <i class="bi bi-check2-circle me-2" aria-hidden="true"></i>Validar formulário</button
+                ><button class="btn btn-outline-secondary ms-2" type="reset">Limpar</button>
+              </div>
+            </form>
+            <div id="validationResult" class="alert alert-success d-none mt-4 mb-0" role="status" aria-live="polite">
+              <h3 class="h6"><i class="bi bi-check-circle-fill me-2" aria-hidden="true"></i>Validação concluída</h3>
+              <p id="txtresultado" class="mb-0"></p>
+            </div>
+          </section>
+        </div>
+        <aside class="col-lg-5">
+          <section class="side-note">
+            <span class="side-note-icon"><i class="bi bi-shield-check" aria-hidden="true"></i></span>
+            <h2 class="h4">O que este exemplo verifica?</h2>
+            <ul class="check-list">
+              <li>Campos obrigatórios preenchidos</li>
+              <li>Formato válido para o endereço de e-mail</li>
+              <li>Idade entre 18 e 100 anos</li>
+              <li>Seleção de um objetivo de estudo</li>
+              <li>Confirmação de que não há envio para servidor</li>
             </ul>
-        </nav>
-
-        <div class="container mt-3">
-            <div class="row mb-3">
-                <div class="col-md-12 col-sm-12 mb-2">
-                    <form class="cmxform" id="formExemplo" method="get" action>
-                        <fieldset>
-
-                            <!--https://jqueryvalidation.org/documentation/-->
-                            <div class="form-group">
-                                <label for="txtnome">Nome</label>
-                                <input
-                                    type="text"
-                                    class="form-control"
-                                    placeholder="seu nome aqui"
-                                    id="txtnome"
-                                    required minlength="2"
-                                    name="txtnome" />
-                            </div>
-                            <div class="form-group">
-                                <label for="txtidade">Idade</label>
-                                <input
-                                    type="number"
-                                    step="1"
-                                    class="form-control"
-                                    id="txtidade"
-                                    min="18"
-                                    max="100"
-                                    name="txtidade" required />
-                            </div>
-                            <div class="form-group">
-                                <label for="txtemail">E-mail</label>
-                                <input
-                                    type="email"
-                                    class="form-control"
-                                    placeholder="seu nome aqui"
-                                    id="txtemail"
-                                    name="txtemail" required />
-                            </div>
-
-                            <input
-                                type="submit"
-                                class="btn btn-danger"
-                                value="Enviar" />
-
-                            </div>
-                            <div class="col-md-12 col-sm-12 mb-2">
-                                <div class="alert alert-primary" role="alert">
-                                    <p id="txtresultado">Resultado: </p>
-                                </div>
-                            </div>
-                        </fieldset>
-                    </form>
-                </div>
-            </div>
-
-            <!-- Footer 
-            peguei esse https://bootsnipp.com/snippets/rlXdE
-            tem mais em https://bootsnipp.com/tags/footer/4
-            -->
-            <section id="footer">
-                <div class="container">
-                    <div
-                        class="row text-center text-xs-center text-sm-left text-md-left">
-                        <div class="col-xs-12 col-sm-4 col-md-4">
-                            <h5>Quick links</h5>
-                            <ul class="list-unstyled quick-links">
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>Home</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>About</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>FAQ</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>Get
-                                        Started</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>Videos</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4">
-                            <h5>Quick links</h5>
-                            <ul class="list-unstyled quick-links">
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>Home</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>About</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>FAQ</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>Get
-                                        Started</a></li>
-                                <li><a href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-angle-double-right"></i>Videos</a></li>
-                            </ul>
-                        </div>
-                        <div class="col-xs-12 col-sm-4 col-md-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <iframe
-                                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3670.304234737327!2d-47.20515972545756!3d-23.085956244297464!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94c8b4b183d3173b%3A0xe4e10e5dd84bd49e!2sFatec!5e0!3m2!1spt-BR!2sbr!4v1716983275274!5m2!1spt-BR!2sbr"
-                                        width="100%" height="315" style="border:0;"
-                                        allowfullscreen loading="lazy"
-                                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                                </div>
-                            </div>
-
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-5">
-                            <ul
-                                class="list-unstyled list-inline social text-center">
-                                <li class="list-inline-item"><a
-                                        href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-facebook"></i></a></li>
-                                <li class="list-inline-item"><a
-                                        href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-twitter"></i></a></li>
-                                <li class="list-inline-item"><a
-                                        href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-instagram"></i></a></li>
-                                <li class="list-inline-item"><a
-                                        href="https://www.fiverr.com/share/qb8D02"><i
-                                            class="fa fa-google-plus"></i></a></li>
-                                <li class="list-inline-item"><a
-                                        href="https://www.fiverr.com/share/qb8D02"
-                                        target="_blank"><i
-                                            class="fa fa-envelope"></i></a></li>
-                            </ul>
-                        </div>
-                        <hr>
-                    </div>
-                    <div class="row">
-                        <div
-                            class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2 text-center text-white">
-                            <p><u><a
-                                        href="https://www.nationaltransaction.com/">National
-                                        Transaction Corporation</a></u> is a
-                                Registered MSP/ISO of Elavon, Inc. Georgia [a wholly
-                                owned subsidiary of U.S. Bancorp, Minneapolis,
-                                MN]</p>
-                            <p class="h6">© All right Reversed.<a
-                                    class="text-green ml-2"
-                                    href="https://www.sunlimetech.com"
-                                    target="_blank">Sunlimetech</a></p>
-                        </div>
-                        <hr>
-                    </div>
-                </div>
-            </section>
-            <!-- ./Footer -->
-
-            <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-            <script
-            src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"></script>
-            <script
-            src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"></script>
-
-            <!--validação-->
-            <script
-            src="http://jqueryvalidation.org/files/dist/jquery.validate.js"></script>
-            <!--regras adicionais de validação-->
-            <script src="http://jqueryvalidation.org/files/dist
-            /additional-methods.min.js"></script>
-            <!--seu script de validação-->
-            <script src="js/validacao.js"></script>
-    </body>
+            <p class="small text-secondary mb-0">
+              Os dados ficam apenas na memória da página e são apagados ao recarregar.
+            </p>
+          </section>
+        </aside>
+      </div>
+    </main>
+    <footer class="site-footer">
+      <div class="container d-flex flex-column flex-md-row justify-content-between gap-2">
+        <p class="mb-0"><strong>Salários em Foco</strong> · Projeto didático</p>
+        <p class="mb-0">Formulário de demonstração <span aria-hidden="true">·</span> <span id="ano-atual"></span></p>
+      </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/validacao.js"></script>
+  </body>
 </html>
